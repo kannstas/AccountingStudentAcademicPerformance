@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Student>
+
+<form asp-controller="Students" asp-action="AddStudent" method="post">
+    <input type="text" name="Name" placeholder="Имя студента" required />
+    <input type="number" name="Score" placeholder="Баллы" required />
+    <button type="submit">Добавить студента</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Баллы</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+                <tr>
+                    <td>@student.Name</td>
+                    <td>@student.Score</td>
+                </tr>
+        }
+    </tbody>
+</table>
